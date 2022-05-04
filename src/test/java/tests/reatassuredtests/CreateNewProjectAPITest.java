@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class CreateNewProjectAPITest {
 
-    @Test
+    @Test(priority = 4)
     @Description("RestAssured test when user create a new project with API token")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://app.qase.io/projects")

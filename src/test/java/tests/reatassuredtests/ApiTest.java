@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class ApiTest {
 
-    @Test
+    @Test(enabled = false)
     public void apiDeleteProject() {
         apiGetAllProjectsTemp2();
 
@@ -31,7 +31,7 @@ public class ApiTest {
                 .headers("Accept", "application/json")
                 .header("Token", "037c02547e8e0a99dc18f5e766e4c93905fc0c66")
                 .when()
-                .delete(String.format("https://api.qase.io/v1/project/%s","df" ))
+                .delete(String.format("https://api.qase.io/v1/project/%s", "df"))
                 .then()
                 .log()
                 .all()
@@ -54,11 +54,11 @@ public class ApiTest {
                 .then()
                 .log()
                 .all()
-                .statusCode(200);
-             //   .body("result.total", equalTo(3));
+                .statusCode(200)
+                .body("status", equalTo(true));
     }
 
-    @Test
+    @Test(enabled = false)
     public void apiGetAllProjectsTemp2() {
         RequestSpecification request = RestAssured.given();
         request

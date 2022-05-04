@@ -16,7 +16,7 @@ public class CreateTestCaseTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(CreateTestCaseTest.class.getName());
 
-    @Test
+    @Test(priority = 3)
     @Description("Create test case for random project from projects list")
     @Severity(SeverityLevel.CRITICAL)
     public void createTestCaseTest() {

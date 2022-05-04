@@ -10,25 +10,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import staticdata.WebUrls;
-import utilities.Retry;
 
-
-public class LoginTest extends BaseTest{
-
+public class SignOutTest extends BaseTest{
     private static final Logger logger = LogManager.getLogger(LoginTest.class.getName());
 
-   // @Test(retryAnalyzer = Retry.class, priority = 1)
+    // @Test(retryAnalyzer = Retry.class, priority = 1)
     @Test
-    @Description("Users can log in using email and password.")
+    @Description("Sign out from account")
     @Severity(SeverityLevel.CRITICAL)
-    @Link("https://app.qase.io/login")
-    public void loginTest() {
-        logger.info("loginTest started");
+    @Link("https://app.qase.io/*")
+    public void signOutTest() {
+        logger.info("Start CreateAPIKeyTest");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.openPage();
-        logger.info("Login Page opened");
-        loginPage.makeLogin();
-        Assert.assertEquals(driver.getCurrentUrl(), WebUrls.QASEIO_PROJECTS_URL, "Login fail");
-        logger.info("Login successful");
+        Assert.assertEquals(loginPage.openPage().makeLogin().getUserMenu().signOut().isSignOut(), WebUrls.QASEIO_LOGIN_URL, "SignOut not complete");
+        logger.info("SignOutTest successful complete");
     }
 }

@@ -8,7 +8,6 @@
             </run>
         </groups>
         <classes>
-            <class name="tests.uitests.LoginTest"></class>
             <class name="tests.uitests.CreateNewProjectTest"></class>
             <class name="tests.uitests.CreateSuiteTest"></class>
             <parameter name="browser" value="chrome"></parameter>
