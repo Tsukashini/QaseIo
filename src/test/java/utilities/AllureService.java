@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class AllureService {
+
     @Attachment
     public byte[] takeScreenShot(WebDriver driver) {
         TakesScreenshot screenShot = ((TakesScreenshot) driver);

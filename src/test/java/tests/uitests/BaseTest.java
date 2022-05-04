@@ -4,23 +4,21 @@ import driver.DriverFactory;
 import driver.DriverManager;
 import driver.DriverType;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+import utilities.TestListeners;
 
 import java.net.MalformedURLException;
 
+@Listeners(TestListeners.class)
 public class BaseTest {
     WebDriver driver;
     DriverManager driverManager;
     DriverType driverType;
 
-    @BeforeMethod
+    @BeforeSuite
     @Parameters({"browser"})
     public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
         DriverFactory factory = new DriverFactory();
-        driverType = null;
         switch (browser) {
             case "chrome":
                 driverType = DriverType.CHROME;
@@ -36,7 +34,6 @@ public class BaseTest {
                 break;
             default: driverType = null;
         }
-        ;
         driverManager = factory.getManager(driverType);
         driverManager.createDriver();
         driver = driverManager.getDriver();
@@ -44,7 +41,7 @@ public class BaseTest {
         driverManager.setTimeout();
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     public void tearDown() {
         driverManager.quitDriver();
     }

@@ -3,6 +3,7 @@ package pages;
 import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import io.qameta.allure.Step;
 import models.ProjectTitlesModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -36,12 +37,14 @@ public class ProjectsPage extends BasePage {
         return new NewProjectPage(driver);
     }
 
+    @Step("Open user menu")
     public UserMenuPage getUserMenu() {
         logger.info("Go to user menu");
         driver.findElement(USER_MENU).click();
         return new UserMenuPage(driver);
     }
 
+    @Step("Getting a list of projects and add it to JSON file")
     public ProjectsPage getProjectsList() {
         List<String> titles = new ArrayList<>();
         for (WebElement element : driver.findElements(PROJECTS_TITLES)) {
@@ -57,6 +60,7 @@ public class ProjectsPage extends BasePage {
         return this;
     }
 
+    @Step("Delete random project")
     public DeleteProjectPage deleteProject() {
         logger.info("Start deleting random project");
         int size = driver.findElements(PROJECTS_TITLES).size();
@@ -67,6 +71,7 @@ public class ProjectsPage extends BasePage {
         return new DeleteProjectPage(driver);
     }
 
+    @Step("Edit random project")
     public RepositoryPage editProject() {
         List<WebElement> webElements = driver.findElements(PROJECTS_TITLES);
         int size = webElements.size();

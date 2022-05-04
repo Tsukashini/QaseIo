@@ -1,5 +1,9 @@
 package tests.uitests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import lombok.extern.log4j.Log4j;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -10,7 +14,11 @@ import pages.LoginPage;
 public class GetProjectsTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(GetProjectsTest.class.getName());
+
     @Test
+    @Description("Get list of authorization user projects")
+    @Severity(SeverityLevel.NORMAL)
+    @Link("https://app.qase.io/projects")
     public void getAllProjects() {
         logger.info("Start GetProjectsTest");
         LoginPage loginPage = new LoginPage(driver);

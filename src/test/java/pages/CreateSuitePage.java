@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import models.SuiteModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -20,6 +21,7 @@ public class CreateSuitePage extends BasePage {
         super(driver);
     }
 
+    @Step("Send suite data to new suite form")
     public RepositoryPage createSuite(SuiteModel suiteModel) {
         logger.info(this.getClass().getName() + "is opened");
         driver.findElement(SUITE_NAME_INPUT).sendKeys(suiteModel.getSuiteName());

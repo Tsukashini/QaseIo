@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import models.NewProjectModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -23,6 +24,7 @@ public class NewProjectPage extends BasePage {
         super(driver);
     }
 
+    @Step("Send model new project")
     public NewProjectPage sendNewProjectModel(NewProjectModel newProjectModel) {
         driver.findElement(PROJECT_NAME_INPUT).click();
         driver.findElement(PROJECT_NAME_INPUT).sendKeys(newProjectModel.getName());
@@ -34,6 +36,7 @@ public class NewProjectPage extends BasePage {
         return this;
     }
 
+    @Step("Click button for create new project")
     public RepositoryPage createProject() {
         driver.findElement(CREATE_PROJECT_BUTTON).click();
         logger.info("New project created");

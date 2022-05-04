@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -19,11 +20,13 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step ("Open login page ")
     public LoginPage openPage() {
         driver.get(WebUrls.QASEIO_LOGIN_URL);
         return this;
     }
 
+    @Step("Send user email and password into login form and click login button")
     public ProjectsPage makeLogin() {
         driver.findElement(EMAIL_INPUT).sendKeys(Secret.EMAIL);
         driver.findElement(PASSWORD_INPUT).sendKeys(Secret.PASSWORD);

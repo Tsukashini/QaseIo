@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -16,12 +17,13 @@ public class UserMenuPage extends BasePage{
         super(driver);
     }
 
+    @Step("Click 'Api tokens' link from menu")
     public APITokensPage goToAPITokens() {
         driver.findElement(API_TOKENS_LINK).click();
         logger.info("Click Api tokens button");
         return new APITokensPage(driver);
     }
-
+    @Step("Click 'Sign out' link from menu")
     public SignOutPage signOut() {
         driver.findElement(SIGN_OUT_LINK).click();
         logger.info("Click Sign out button");

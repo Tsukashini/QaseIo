@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -21,12 +22,14 @@ public class RepositoryPage extends BasePage {
         return driver.findElement(SUCCESSFUL_ALERT_MESSAGE).isDisplayed();
     }
 
+    @Step("Click button for create New Suite")
     public CreateSuitePage newSuiteCreate() {
         driver.findElement(NEW_SUITE_BUTTON).click();
         logger.info("Click Suite create button");
-        return  new CreateSuitePage(driver);
+        return new CreateSuitePage(driver);
     }
 
+    @Step("Click button for create New test case")
     public CreateTestCasePage newTestCaseCreate() {
         driver.findElement(NEW_CASE_BUTTON).click();
         logger.info("Click test case create button");

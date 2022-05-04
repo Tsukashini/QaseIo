@@ -1,5 +1,9 @@
 package tests.reatassuredtests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import models.NewProjectAPIModel;
@@ -11,6 +15,9 @@ import static org.hamcrest.Matchers.equalTo;
 public class CreateNewProjectAPITest {
 
     @Test
+    @Description("RestAssured test when user create a new project with API token")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link("https://app.qase.io/projects")
     public void apiCreateNewProjects() {
         NewProjectAPIModel apiModel = NewProjectAPIData.getNewProjectAPIData();
         RestAssured

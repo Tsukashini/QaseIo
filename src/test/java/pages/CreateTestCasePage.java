@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import models.TestCaseModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -18,6 +19,7 @@ public class CreateTestCasePage extends BasePage {
         super(driver);
     }
 
+    @Step("Send test case data to new test case form")
     public RepositoryPage createTestCase(TestCaseModel testCaseModel) {
         driver.findElement(TITLE_INPUT).sendKeys(testCaseModel.getTitle());
         driver.findElement(DESCRIPTION_INPUT).sendKeys(testCaseModel.getDescription());

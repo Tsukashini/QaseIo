@@ -1,9 +1,12 @@
 package tests.uitests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Link;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import staticdata.WebUrls;
@@ -14,7 +17,11 @@ public class LoginTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(LoginTest.class.getName());
 
-    @Test(retryAnalyzer = Retry.class)
+   // @Test(retryAnalyzer = Retry.class, priority = 1)
+    @Test(priority = 1)
+    @Description("Users can log in using email and password.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link("https://app.qase.io/login")
     public void loginTest() {
         logger.info("loginTest started");
         LoginPage loginPage = new LoginPage(driver);
