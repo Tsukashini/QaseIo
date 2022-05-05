@@ -1,18 +1,14 @@
 package tests.reatassuredtests;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import jdk.nashorn.internal.parser.JSONParser;
 import org.testng.annotations.Test;
+import staticdata.Secret;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -29,7 +25,7 @@ public class ApiTest {
                 .all()
                 .and()
                 .headers("Accept", "application/json")
-                .header("Token", "037c02547e8e0a99dc18f5e766e4c93905fc0c66")
+                .header("Token", Secret.API_TOKEN_MANUAL)
                 .when()
                 .delete(String.format("https://api.qase.io/v1/project/%s", "df"))
                 .then()
@@ -48,7 +44,7 @@ public class ApiTest {
                 .all()
                 .and()
                 .headers("Accept", "application/json")
-                .header("Token", "037c02547e8e0a99dc18f5e766e4c93905fc0c66")
+                .header("Token", Secret.API_TOKEN_MANUAL)
                 .when()
                 .get("https://api.qase.io/v1/project")
                 .then()
@@ -67,7 +63,7 @@ public class ApiTest {
                 .all()
                 .and()
                 .headers("Accept", "application/json")
-                .header("Token", "037c02547e8e0a99dc18f5e766e4c93905fc0c66");
+                .header("Token", Secret.API_TOKEN_MANUAL);
         Response response = request.get("https://api.qase.io/v1/project?limit=100&offset=0");
 
 

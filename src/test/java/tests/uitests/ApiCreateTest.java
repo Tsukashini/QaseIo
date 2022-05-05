@@ -8,7 +8,7 @@ import staticdata.WebUrls;
 
 public class ApiCreateTest extends BaseTest{
 
-    @Test
+    @Test(description = "Test canceling API token creating process")
     public void cancelApiCreateTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();

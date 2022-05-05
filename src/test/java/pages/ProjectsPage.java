@@ -4,13 +4,11 @@ import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.qameta.allure.Step;
-import models.ProjectTitlesModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import testdata.ProjectListData;
 
 import java.io.FileWriter;
 import java.io.IOException;

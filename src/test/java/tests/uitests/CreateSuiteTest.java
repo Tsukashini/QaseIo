@@ -15,7 +15,7 @@ public class CreateSuiteTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(CreateSuiteTest.class.getName());
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Create suite for random project from projects list")
     @Description("Create suite for random project from projects list")
     @Severity(SeverityLevel.CRITICAL)
     public void createSuiteTest() {

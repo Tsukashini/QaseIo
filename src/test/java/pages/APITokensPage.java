@@ -15,7 +15,6 @@ public class APITokensPage extends BasePage {
     private By TITLE_INPUT = By.id("title");
     private By CREATE_BUTTON = By.id("createToken");
     private By TOKEN = By.id("token");
-   // private By CLOSE_BUTTON = By.xpath("//div[@class='col-12 text-end']/a[@id='tokenClose']");
     private By CLOSE_BUTTON = By.id("tokenClose");
     private String title;
 
@@ -36,7 +35,6 @@ public class APITokensPage extends BasePage {
         }
         String token = driver.findElement(TOKEN).getText();
 
-       // new File("src/test/resources", title);
 
         System.out.println(token);
         logger.info("Token saved");

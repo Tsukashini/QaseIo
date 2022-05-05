@@ -17,9 +17,8 @@ public class LoginTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(LoginTest.class.getName());
 
-   // @Test(retryAnalyzer = Retry.class, priority = 1)
-    @Test
-    @Description("Users can log in using email and password.")
+    @Test(retryAnalyzer = Retry.class, description = "Users can log in using valid email and password.")
+    @Description("Users can log in using valid email and password.")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://app.qase.io/login")
     public void loginTest() {

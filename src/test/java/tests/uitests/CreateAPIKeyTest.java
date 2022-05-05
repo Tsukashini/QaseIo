@@ -15,7 +15,7 @@ public class CreateAPIKeyTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(APITokensPage.class.getName());
 
-    @Test
+    @Test (description = "Creating API token test")
     @Description("Creating API token")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://app.qase.io/user/api/token")

@@ -16,7 +16,7 @@ public class CreateNewProjectTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(CreateNewProjectTest.class.getName());
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "Authorization user create a new project")
     @Description("Authorization user create a new project")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://app.qase.io/projects")

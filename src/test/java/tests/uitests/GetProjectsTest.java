@@ -15,7 +15,7 @@ public class GetProjectsTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(GetProjectsTest.class.getName());
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Get list of authorization user projects test")
     @Description("Get list of authorization user projects")
     @Severity(SeverityLevel.NORMAL)
     @Link("https://app.qase.io/projects")

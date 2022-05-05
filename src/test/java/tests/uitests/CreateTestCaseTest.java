@@ -1,7 +1,6 @@
 package tests.uitests;
 
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.apache.log4j.LogManager;
@@ -16,7 +15,7 @@ public class CreateTestCaseTest extends BaseTest{
 
     private static final Logger logger = LogManager.getLogger(CreateTestCaseTest.class.getName());
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Create test case for random project from projects list")
     @Description("Create test case for random project from projects list")
     @Severity(SeverityLevel.CRITICAL)
     public void createTestCaseTest() {

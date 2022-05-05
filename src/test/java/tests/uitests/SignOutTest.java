@@ -10,12 +10,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import staticdata.WebUrls;
+import utilities.Retry;
 
 public class SignOutTest extends BaseTest{
     private static final Logger logger = LogManager.getLogger(LoginTest.class.getName());
 
-    // @Test(retryAnalyzer = Retry.class, priority = 1)
-    @Test
+    @Test(retryAnalyzer = Retry.class, description = "Sign out from account" )
     @Description("Sign out from account")
     @Severity(SeverityLevel.CRITICAL)
     @Link("https://app.qase.io/*")

@@ -15,7 +15,7 @@ public class DeleteProjectTest extends BaseTest {
 
     private static final Logger logger = LogManager.getLogger(DeleteProjectTest.class.getName());
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "Delete random project from projects list" )
     @Description("Delete random project from projects list")
     @Severity(SeverityLevel.NORMAL)
     @Link("https://app.qase.io/projects")
