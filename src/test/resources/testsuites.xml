@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QaseIO tests" thread-count="3" parallel="classes">
+    <test name="test 1">
+        <groups>
+            <run>
+                <exclude name="load"></exclude>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.uitests.CreateNewProjectTest"></class>
+            <class name="tests.uitests.CreateSuiteTest"></class>
+            <parameter name="browser" value="chrome"></parameter>
+        </classes>
+    </test>
+<!--    <test name="test 2">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <exclude name="load"></exclude>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="tests.uitests.CreateAPIKeyTest"></class>-->
+<!--            <class name="tests.uitests.CreateTestCaseTest"></class>-->
+<!--            <class name="tests.uitests.DeleteProjectTest"></class>-->
+<!--            <parameter name="browser" value="firefox"></parameter>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
